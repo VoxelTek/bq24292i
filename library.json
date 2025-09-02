@@ -1,0 +1,23 @@
+{
+  "name": "bq24292i",
+  "version": "0.0.1",
+  "description": "BQ24292i is a battery management controller capable of delivering high currents and a wide charging voltage range. This driver exposes the register access.",
+  "keywords": "battery, power, bq24292i, ti, i2c",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/jefflongo/bq24292i.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Jeff Longo",
+      "email": "jeff.a.longo@gmail.com",
+      "url": "jefflongo.dev",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}
