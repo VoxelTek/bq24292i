@@ -88,3 +88,7 @@ bool bq25895_get_charge_state(bq25895_t const* dev, bq25895_charge_state_t* stat
 bool bq25895_get_source_type(bq25895_t const* dev, bq25895_source_type_t* source);
 
 bool bq25895_check_faults(bq25895_t const* dev, bq25895_fault_t* faults);
+
+bool bq25895_trigger_adc_read(bq25895_t const* dev);
+bool bq25895_get_adc_batt(bq25895_t const* dev, bq25895_batt_volt_t* voltage);
+bool bq25895_set_adc_cont(bq25895_t const* dev, bool enabled);

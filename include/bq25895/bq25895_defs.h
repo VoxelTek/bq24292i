@@ -4,6 +4,8 @@
 
 typedef uint16_t bq25895_iin_max_t;
 
+typedef uint16_t bq25895_batt_volt_t;
+
 typedef uint16_t bq25895_vin_max_t;
 
 typedef uint16_t bq25895_vsys_min_t;

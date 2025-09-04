@@ -489,3 +489,29 @@ bool bq25895_check_faults(bq25895_t const* dev, bq25895_fault_t* faults) {
     *faults = data;
     return true;
 }
+
+bool bq25895_trigger_adc_read(bq25895_t const* dev) {
+    uint8_t data = (uint8_t)((1 << BQ_ADC_START_POS) & BQ_ADC_START_MSK);
+
+    return modify_reg(dev, BQ_REG02, data, BQ_ADC_START_MSK);
+}
+
+bool bq25895_get_adc_batt(bq25895_t const* dev, bq25895_batt_volt_t* voltage) {
+    if (!voltage) return false;
+
+    uint8_t data;
+    if (!read_reg(dev, BQ_REG0E, &data)) {
+        return false;
+    }
+
+    *voltage = (bq25895_batt_volt_t)(perform_dac(
+      ((data & BQ_ADC_VAL_MSK) >> BQ_ADC_VAL_POS), BQ_ADC_VAL_OFFSET, BQ_ADC_VAL_INCR));
+    return true;
+}
+
+
+bool bq25895_set_adc_cont(bq25895_t const* dev, bool enable) {
+    uint8_t data = (uint8_t)((enable << BQ_ADC_RATE_POS) & BQ_ADC_RATE_MSK);
+
+    return modify_reg(dev, BQ_REG02, data, BQ_ADC_RATE_MSK);
+}
