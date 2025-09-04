@@ -24,7 +24,7 @@ bool bq25895_set_vin_max(bq25895_t const* dev, bq25895_vin_max_t mv);
 bool bq25895_get_vin_max(bq25895_t const* dev, bq25895_vin_max_t* mv);
 
 bool bq25895_set_vsys_min(bq25895_t const* dev, bq25895_vsys_min_t mv);
-bool bq25895_get_vin_max(bq25895_t const* dev, bq25895_vsys_min_t* mv);
+bool bq25895_get_vsys_min(bq25895_t const* dev, bq25895_vsys_min_t* mv);
 
 bool bq25895_set_charge_config(bq25895_t const* dev, bq25895_chg_config_t conf);
 bool bq25895_get_charge_config(bq25895_t const* dev, bq25895_chg_config_t* conf);
