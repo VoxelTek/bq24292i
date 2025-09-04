@@ -12,7 +12,7 @@ static inline bool write_reg(bq25895_t const* dev, uint8_t reg, uint8_t data) {
 
 static inline bool modify_reg(bq25895_t const* dev, uint8_t reg, uint8_t data, uint8_t mask) {
     uint8_t buf;
-    if (!read_reg(dev, reg, &data)) {
+    if (!read_reg(dev, reg, &buf)) {
         return false;
     }
 
