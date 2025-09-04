@@ -85,6 +85,7 @@ typedef enum {
 } bq25895_source_type_t;
 
 enum {
+    BQ_FAULT_NONE       = 0x00U,
     BQ_FAULT_THERM      = 0x07U,
     BQ_FAULT_BAT        = 0x08U,
     BQ_FAULT_CHG        = 0x30U,
